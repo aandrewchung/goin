@@ -1,0 +1,6 @@
+.App {
+  height: 100vh; /* Make sure the app fills the whole viewport */
+  background-image: url('./images/temp_background.png');
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the background image */
+}
