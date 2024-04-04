@@ -1,6 +1,16 @@
 .App {
   height: 100vh; /* Make sure the app fills the whole viewport */
-  background-image: url('./images/temp_background.png');
+  background-image: url('./assets/images/temp_background.png');
   background-size: cover; /* Cover the entire viewport */
   background-position: center; /* Center the background image */
+  position: relative; /* Needed for absolute positioning of child elements */
+}
+
+.App-button {
+  position: absolute;
+  top: 50%; /* Adjust these values to position your button as needed */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the button */
+  width: 10vw; /* Set width to be 10% of the viewport width */
+  height: auto; /* Maintain aspect ratio */
 }
