@@ -1,24 +1,33 @@
 import React from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import CreatePage from './pages/CreatePage';
+import NoMatchPage from './pages/NoMatchPage';
+
+import buttonImage from './assets/images/temp_button.png';
 import './App.css';
-import buttonImage from './assets/images/temp_button.png'; // Import the button image
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function App() {
-  let navigate = useNavigate(); // Hook to navigate
-
-  const navigateToHome = () => {
-    navigate('/home'); // Navigate to /home when the function is called
-  };
+  let navigate = useNavigate();
 
   return (
-    <div className="App">
-      <img
-        src={buttonImage}
-        alt="Button"
-        className="App-button"
-        onClick={navigateToHome} // Set the click handler
-      />
-    </div>
+    <Routes>
+      {/* Define a separate route for the starting page */}
+      <Route path="*" element={<NoMatchPage />} />
+      <Route path="/" element={
+        <div className="App">
+          <img
+            src={buttonImage}
+            alt="Button"
+            className="App-button"
+            onClick={() => navigate('/home')}
+          />
+        </div>
+      } />
+      {/* Other pages */}
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/create" element={<CreatePage />} />
+    </Routes>
   );
 }
 

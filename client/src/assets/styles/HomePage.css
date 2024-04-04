@@ -5,3 +5,13 @@
     background-position: center; /* Center the background image */
     position: relative; /* Needed for absolute positioning of child elements */
 }
+
+.Home-button {
+    position: absolute;
+    top: 50%; /* Adjust these values to position your button as needed */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the button */
+    width: 10vw; /* Set width to be 10% of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
